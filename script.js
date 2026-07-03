@@ -45,4 +45,28 @@ function dibujarRuleta() {
         ctx.arc(
             centro,
             centro,
-            radio
+            radio,
+            i * angulo,
+            (i + 1) * angulo
+        );
+
+        ctx.fill();
+
+        ctx.save();
+
+        ctx.translate(centro, centro);
+        ctx.rotate(i * angulo + angulo / 2);
+
+        ctx.fillStyle = "white";
+        ctx.font = "bold 16px Poppins";
+        ctx.textAlign = "right";
+
+        ctx.fillText(
+            premios[i],
+            radio - 20,
+            8
+        );
+
+        ctx.restore();
+    }
+}
