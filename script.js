@@ -70,3 +70,58 @@ function dibujarRuleta() {
         ctx.restore();
     }
 }
+dibujarRuleta();
+
+formulario.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    nombre = document.querySelector('input[type="text"]').value;
+    cedula = document.querySelector('input[type="number"]').value;
+
+    formulario.style.display = "none";
+    ruletaContainer.style.display = "block";
+});
+
+botonGirar.addEventListener("click", function() {
+
+    if (girando) return;
+
+    girando = true;
+
+    const ganador = Math.floor(Math.random() * premios.length);
+
+    const vueltas = 6;
+    const anguloSector = 360 / premios.length;
+
+    const destino =
+        vueltas * 360 +
+        (360 - ganador * anguloSector - anguloSector / 2);
+
+    anguloActual += destino;
+
+    canvas.style.transition = "transform 5s ease-out";
+    canvas.style.transform = `rotate(${anguloActual}deg)`;
+
+    setTimeout(() => {
+
+        premioTexto.innerHTML =
+            "🎉 Ganaste:<br><b>" + premios[ganador] + "</b>";
+
+        whatsapp.href =
+            "https://wa.me/573229421245?text=" +
+            encodeURIComponent(
+                "Hola, soy " +
+                nombre +
+                ". Mi cédula es " +
+                cedula +
+                " y gané: " +
+                premios[ganador]
+            );
+
+        whatsapp.style.display = "inline-block";
+
+        girando = false;
+
+    }, 5000);
+
+});
