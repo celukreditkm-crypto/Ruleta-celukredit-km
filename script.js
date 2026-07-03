@@ -1,9 +1,3 @@
-const formulario = document.getElementById("formulario");
-const ruletaContainer = document.getElementById("ruleta-container");
-const wheel = document.getElementById("wheel");
-const botonGirar = document.getElementById("girar");
-const resultado = document.getElementById("resultado");
-
 const premios = [
   "⚽ Balón del Mundial",
   "👕 Camisa de Colombia",
@@ -13,37 +7,42 @@ const premios = [
   "🎁 Premio Sorpresa"
 ];
 
+const colores = [
+  "#FF4D4D",
+  "#1E90FF",
+  "#00C853",
+  "#FFD600",
+  "#8E24AA",
+  "#FF6D00"
+];
+
+const canvas = document.getElementById("ruleta");
+const ctx = canvas.getContext("2d");
+
+const formulario = document.getElementById("formulario");
+const ruletaContainer = document.getElementById("ruleta-container");
+const botonGirar = document.getElementById("girar");
+const premioTexto = document.getElementById("premio");
+const whatsapp = document.getElementById("whatsapp");
+
+let nombre = "";
+let cedula = "";
 let girando = false;
+let anguloActual = 0;
 
-formulario.addEventListener("submit", function(e) {
-  e.preventDefault();
+function dibujarRuleta() {
+    const centro = canvas.width / 2;
+    const radio = 160;
+    const angulo = (2 * Math.PI) / premios.length;
 
-  formulario.style.display = "none";
-  ruletaContainer.style.display = "block";
-});
+    for (let i = 0; i < premios.length; i++) {
 
-botonGirar.addEventListener("click", function() {
+        ctx.beginPath();
+        ctx.moveTo(centro, centro);
 
-  if (girando) return;
+        ctx.fillStyle = colores[i];
 
-  girando = true;
-  resultado.innerHTML = "";
-
-  const premio = Math.floor(Math.random() * premios.length);
-
-  const grados = (360 * 6) + (premio * 60);
-
-  wheel.style.transform = `rotate(-${grados}deg)`;
-
-  setTimeout(() => {
-
-    resultado.innerHTML =
-      "🎉 ¡Felicidades! Ganaste:<br><br><b>" +
-      premios[premio] +
-      "</b>";
-
-    girando = false;
-
-  }, 5200);
-
-});
+        ctx.arc(
+            centro,
+            centro,
+            radio
