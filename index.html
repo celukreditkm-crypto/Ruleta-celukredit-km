@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Ruleta Celu Kredit-KM</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="fondo">
+
+<div class="contenedor">
+
+<img src="IMG-20260303-WA0062 (2).png" class="logo">
+
+<h1>🎉 RUEDA DE PREMIOS</h1>
+
+<h2>CELU KREDIT-KM</h2>
+
+<p>
+Completa tus datos para participar y descubrir el premio que tenemos para ti.
+</p>
+
+<form id="formulario">
+
+<input
+type="text"
+placeholder="Nombre completo"
+required>
+
+<input
+type="number"
+placeholder="Número de cédula"
+required>
+
+<label class="check">
+
+<input type="checkbox" required>
+
+Acepto el tratamiento de mis datos personales.
+
+</label>
+
+<button type="submit">
+
+🎰 COMENZAR
+
+</button>
+
+</form>
+
+<div id="ruleta-container" style="display:none;">
+
+<h2>🎉 ¡Gira la ruleta!</h2>
+
+<div class="ruleta">
+
+<div class="flecha"></div>
+
+<div id="wheel" class="wheel">
+
+<div class="sector">⚽</div>
+
+<div class="sector">👕</div>
+
+<div class="sector">🧢</div>
+
+<div class="sector">📱</div>
+
+<div class="sector">💎</div>
+
+<div class="sector">🎁</div>
+
+</div>
+
+</div>
+
+<button id="girar">
+
+🎡 GIRAR
+
+</button>
+
+<h2 id="resultado"></h2>
+
+</div>
+
+<div class="premios">
+
+<h3>Premios</h3>
+
+<ul>
+
+<li>⚽ Balón del Mundial</li>
+
+<li>👕 Camisa de Colombia</li>
+
+<li>🧢 Gorra de Colombia</li>
+
+<li>📱 Forro Siliconado</li>
+
+<li>💎 Vidrio Premium</li>
+
+<li>🎁 Premio Sorpresa</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
