@@ -1,146 +1,97 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0b2f73;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
+    background:linear-gradient(135deg,#0b2d6b,#154aa8);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
 }
 
 .contenedor{
-background:#fff;
-width:100%;
-max-width:430px;
-padding:30px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 0 30px rgba(255,215,0,.3);
+    background:#fff;
+    width:100%;
+    max-width:430px;
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
 .logo{
-width:130px;
-margin-bottom:20px;
+    width:130px;
+    margin-bottom:15px;
 }
 
 h1{
-color:#123b84;
-font-size:38px;
-font-weight:700;
-margin-bottom:10px;
-}
-
-h2{
-color:#d4af37;
-margin-bottom:20px;
+    color:#0b2d6b;
+    font-size:30px;
+    margin-bottom:10px;
 }
 
 p{
-font-size:18px;
-margin-bottom:25px;
-color:#333;
+    color:#555;
+    margin-bottom:20px;
 }
 
 input[type=text],
 input[type=number]{
-width:100%;
-padding:16px;
-margin:10px 0;
-border:2px solid #ddd;
-border-radius:12px;
-font-size:17px;
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:2px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
 }
 
 .check{
-display:flex;
-align-items:center;
-gap:10px;
-margin:20px 0;
-font-size:15px;
-text-align:left;
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    margin:15px 0;
+    text-align:left;
+    font-size:14px;
 }
 
 button{
-width:100%;
-padding:16px;
-background:#d4af37;
-color:white;
-border:none;
-border-radius:12px;
-font-size:20px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
+    width:100%;
+    padding:15px;
+    background:#d4af37;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
 }
 
 button:hover{
-background:#b8931f;
+    transform:scale(1.03);
 }
 
-.premios{
-margin-top:35px;
-text-align:left;
+#ruleta-container{
+    display:none;
+    margin-top:25px;
 }
 
-.premios h3{
-margin-bottom:10px;
-color:#123b84;
+canvas{
+    width:100%;
+    max-width:350px;
+    display:block;
+    margin:20px auto;
 }
 
-.premios li{
-margin:8px 0;
-font-size:17px;
-}
-
-.ruleta{
-position:relative;
-width:300px;
-height:300px;
-margin:25px auto;
-}
-
-.wheel{
-width:300px;
-height:300px;
-border-radius:50%;
-border:10px solid #d4af37;
-background:
-conic-gradient(
-#ff4d4d 0deg 60deg,
-#4da6ff 60deg 120deg,
-#66cc66 120deg 180deg,
-#ffcc00 180deg 240deg,
-#cc66ff 240deg 300deg,
-#ff884d 300deg 360deg
-);
-transition:transform 5s ease-out;
-}
-
-.flecha{
-position:absolute;
-top:-20px;
-left:50%;
-transform:translateX(-50%);
-width:0;
-height:0;
-border-left:18px solid transparent;
-border-right:18px solid transparent;
-border-top:35px solid red;
-z-index:10;
-}
-
-#girar{
-margin-top:20px;
-}
-
-#resultado{
-margin-top:25px;
-color:#123b84;
-font-size:25px;
-}
+.puntero{
+    width:0;
+    height:0;
+    border-left:18px solid transparent;
+    border-right:18px solid transparent;
+    border-top:30px solid #e11d48;
+    margin:0 auto -8
