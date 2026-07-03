@@ -68,3 +68,27 @@ button:hover{
     margin-top:25px;
     text-align:left;
 }
+#wheel{
+    width:250px;
+    height:250px;
+    margin:20px auto;
+    border-radius:50%;
+    border:10px solid #d4af37;
+    background:linear-gradient(45deg,#0a2a66,#1d4ed8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:70px;
+    color:white;
+    transition:transform 5s ease-out;
+    box-shadow:0 0 30px gold;
+}
+
+#girar{
+    margin-top:20px;
+}
+
+#resultado{
+    color:#0a2a66;
+    margin-top:20px;
+}
